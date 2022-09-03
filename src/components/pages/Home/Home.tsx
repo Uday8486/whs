@@ -1,13 +1,12 @@
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Container } from "react-bootstrap";
+import "./Home.css";
 
 const Home = () => {
   return (
     <Container>
-      <Row>
-        <Col>I am in HOME Page </Col>
-      </Row>
+      <div className="home-welcome-block">
+       <h1> Welcome to Warehouse Client Systems - WHS</h1>
+      </div>
     </Container>
   );
 };
