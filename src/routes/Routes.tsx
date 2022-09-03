@@ -5,10 +5,11 @@ import {
   Routes as Switch
 } from "react-router-dom";
 import ThemeProvider from "react-bootstrap/ThemeProvider";
+import { Container } from "react-bootstrap";
 import Header from "../components/common/Header/Header";
 import Home from "../components/pages/Home/Home";
 import Products from "../components/pages/Products/Products";
-import { Container } from "react-bootstrap";
+import GlobalError from "../components/common/GlobalError/GlobalError";
 
 const Routes = () => {
   return (
@@ -16,9 +17,10 @@ const Routes = () => {
       <ThemeProvider
         breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
         minBreakpoint="xxs"
-        
       >
         <Container fluid>
+
+          <GlobalError />
           <Header />
           <Switch>
             <Route path="/" element={<Home/>} />
