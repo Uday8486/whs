@@ -1,6 +1,5 @@
 import {
   BrowserRouter,
-  Navigate,
   Route,
   Routes as Switch
 } from "react-router-dom";
@@ -10,6 +9,7 @@ import Header from "../components/common/Header/Header";
 import Home from "../components/pages/Home/Home";
 import Products from "../components/pages/Products/Products";
 import GlobalError from "../components/common/GlobalError/GlobalError";
+import NotFoundPage from "../components/pages/NotFoundPage/NotFoundPage";
 
 const Routes = () => {
   return (
@@ -25,7 +25,8 @@ const Routes = () => {
           <Switch>
             <Route path="/" element={<Home/>} />
             <Route path="/products" element={<Products/>} />
-                 <Route path="*" element={<Navigate to ="/products" />}/>
+            {/** Navigate to home if */}
+            <Route path="*" element={<NotFoundPage />}/>
           </Switch>
         </Container>
       </ThemeProvider>
