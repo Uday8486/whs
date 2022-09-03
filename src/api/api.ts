@@ -42,6 +42,8 @@ const checkStatus = <T>(data: T, response: Response) => {
     if (response.status >= 200 && response.status < 300) {
         return;
     }
+
+    // TODO: error maps needs to be created for handling error based on status codes.
     const error = new Error(get(data, 'message', null) || response.statusText) as ResponseError;
     error.response = response;
     throw error;
