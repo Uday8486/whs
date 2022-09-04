@@ -9,3 +9,13 @@ export const getProducts = async () => {
 
   return request<Product[]>(requestOptions);
 };
+
+
+export const getProductDetails = async (id:string) => {
+  const requestOptions = {
+    method: "GET",
+    url: `${process.env.REACT_APP_API_ENDPOINT}/products/${id}`,
+  };
+
+  return request<Product>(requestOptions);
+};

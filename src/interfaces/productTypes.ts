@@ -1,6 +1,6 @@
 import { Article } from "./articleTypes";
 
-type ProductArticle = Pick<Article, 'id' | 'name'> & {
+type ProductArticle = Pick<Article, 'id' > & {
     amountRequired: number,
 }
 export interface Product {

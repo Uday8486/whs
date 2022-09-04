@@ -90,7 +90,6 @@ export async function request<T>(options: RequestOptions): Promise<T> {
 
         return data;
     } catch (err: unknown) {
-        console.log(`CAUGHT`);
         return globalErrorHandler(err as ResponseError);
     }
 }
