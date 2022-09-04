@@ -11,7 +11,6 @@ name: 'product 1',
 articles:[
     {
         id: '0000-0000-00000-0000-1',
-        name: 'article 1',
         amountRequired: 4,
     }
 ]

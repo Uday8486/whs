@@ -9,7 +9,6 @@ name: 'product 1',
 articles:[
     {
         id: '0000-0000-00000-0000-1',
-        name: 'article 1',
         amountRequired: 4,
     }
 ]
@@ -17,7 +16,7 @@ articles:[
 
 const mockHandleClick = jest.fn();
  
-describe('Products Component', () => {
+describe('Products Cards Component', () => {
     test('should render the product card component', async () => {
         render(<ProductCardComponent product={mockProduct} clickHandler={mockHandleClick} />);
         expect(screen.getByText(mockProduct.name)).toBeInTheDocument();
