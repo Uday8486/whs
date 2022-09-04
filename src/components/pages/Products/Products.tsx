@@ -50,9 +50,9 @@ const Products = () => {
         </div>
       )}
       {!error && products.length > 0 && (
-        <Row xs={1} md={4} className="g-4">
+        <Row>
           {products.map((product) => (
-            <Col key={product.id}>
+            <Col className="mt-5" xs={12} md={6} key={product.id}>
               <ProductCard product={product} clickHandler={handleClick} />
             </Col>
           ))}

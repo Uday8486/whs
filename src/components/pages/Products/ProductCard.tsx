@@ -1,17 +1,16 @@
 import { Card, Button, ListGroup } from "react-bootstrap";
 import { Product } from "../../../interfaces";
-
 import dummyImage from "../../../assets/images/plank.jpeg";
 interface Props {
   product: Product;
+  clickHandler: (id:string)=>void;
 }
 // Adding dummy text for better showcasing the product.
 // ListGroup can used for showing some extra data like articke or cost etc.
-const ProductCard = ({ product }: Props) => {
-  const { name } = product;
-
+const ProductCard = ({ product, clickHandler }: Props) => {
+  const { name, id } = product;
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card>
       <Card.Img variant="top" src={dummyImage} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
@@ -25,11 +24,13 @@ const ProductCard = ({ product }: Props) => {
         {product.articles.length > 0 && (
           <ListGroup className="list-group-flush">
             <ListGroup.Item>
-              Required Articles: {product.articles.length}
+              <strong>Required Articles:</strong> {product.articles.length}
             </ListGroup.Item>
           </ListGroup>
-        )}
-        <Button variant="primary">View More</Button>
+        )} 
+          <Button variant="primary" onClick={()=> clickHandler(id)}>
+            View More
+          </Button> 
       </Card.Body>
     </Card>
   );

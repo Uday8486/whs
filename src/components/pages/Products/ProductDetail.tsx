@@ -103,7 +103,6 @@ const ProductDetail = () => {
                 <Card.Body>
                   <Card.Title>
                     {productWithArticleDetails.name}
-                    {productId}
                   </Card.Title>
                   <Card.Text>
                     It is a long established fact that a reader will be

@@ -14,15 +14,17 @@ articles:[
     }
 ]
 };
+
+const mockHandleClick = jest.fn();
  
 describe('Products Component', () => {
     test('should render the product card component', async () => {
-        render(<ProductCardComponent product={mockProduct} />);
+        render(<ProductCardComponent product={mockProduct} clickHandler={mockHandleClick} />);
         expect(screen.getByText(mockProduct.name)).toBeInTheDocument();
     });
 
     test('should render required articles count', async () => {
-        render(<ProductCardComponent product={mockProduct} />);
+        render(<ProductCardComponent product={mockProduct} clickHandler={mockHandleClick}/>);
         expect(screen.getByText('Required Articles', {exact: false})).toBeInTheDocument();
     });
 
@@ -31,7 +33,7 @@ describe('Products Component', () => {
             ...mockProduct,
             articles: [],
         }
-        render(<ProductCardComponent product={mockProductWithNoArticles} />);
+        render(<ProductCardComponent product={mockProductWithNoArticles} clickHandler={mockHandleClick}/>);
         expect(screen.queryByText('Required Articles', {exact: false})).not.toBeInTheDocument();
     });
 });

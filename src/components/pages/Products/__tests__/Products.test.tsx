@@ -17,6 +17,7 @@ articles:[
 ]
 }];
 
+jest.mock('react-router-dom');
 jest.mock('../ProductCard', () => () => 'ProductCard');
 
 
